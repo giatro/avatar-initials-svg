@@ -10,7 +10,7 @@ export interface IOptions {
     textColor?: string;
 }
 
-export function generateAvatarSvgUrl(text: string, ops: IOptions) {
+export function generateAvatarSvgUrl(text: string, ops?: IOptions) {
     const bgc = ops.backgroundColor || getColorByName(text);
     const fgc = ops.textColor || getContrastYIQ(bgc);
     const options = {
