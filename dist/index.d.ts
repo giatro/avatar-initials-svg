@@ -1,0 +1,1 @@
+export { generateAvatarSvgUrl } from "./generate";

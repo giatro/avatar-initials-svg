@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        html, body { margin: 0; padding: 0; }
+        img { vertical-align: bottom; }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import { generateAvatarSvgUrl } from '/dist/avatar-initials-svg.modern.js';
+        for(let i = 0; i < 100; i++) {
+            const img = document.createElement('img');
+            img.style.width = '50px';
+            img.src = generateAvatarSvgUrl('Elvis Aaron Presley', {
+                // backgroundColor: '#666666',
+                // textColor: '#EEEEEE',
+                // fontFamily: 'sans-serif',
+                maxNumOfLetters: Math.floor(Math.random() * 3) + 1,
+                rounded: Math.floor(Math.random() * 2)
+            });
+            document.body.appendChild(img);
+        }
+    </script>
+</body>
+</html>

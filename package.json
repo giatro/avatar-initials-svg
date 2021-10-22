@@ -1,0 +1,18 @@
+{
+  "name": "avatar-initials-svg",
+  "version": "0.0.1",
+  "description": "Generate text based avatar url in SVG format (based on https://github.com/utkarshdubey/silhouette)",
+  "module": "dist/avatar-initials-svg.modern.js",
+  "main": "dist/avatar-initials-svg.umd.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/giatro/avatar-initials-svg.git",
+  "author": "Gianluca Troiani <gianluca.troiani@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "microbundle src/index.ts -o ./dist -f modern,umd --target web --raw true  --tsconfig tsconfig.json",
+    "dev": "microbundle watch src/index.ts -o ./dist -f modern,umd --target web --raw true  --tsconfig tsconfig.json"
+  },
+  "devDependencies": {
+    "microbundle": "^0.14.1"
+  }
+}
