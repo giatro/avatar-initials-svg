@@ -1,5 +1,4 @@
-import { getInitials, getContrastYIQ } from './utils';
-import { colors } from './colors';
+import { getInitials, getContrastYIQ, getColorByName } from './utils';
 
 export type MaxNumOfLetters = 1 | 2 | 3;
 
@@ -12,13 +11,13 @@ export interface IOptions {
 }
 
 export function generateAvatarSvgUrl(text: string, ops: IOptions) {
-    const bgc = ops.backgroundColor || colors[Math.floor(Math.random()*colors.length)];
+    const bgc = ops.backgroundColor || getColorByName(text);
     const fgc = ops.textColor || getContrastYIQ(bgc);
     const options = {
         ...{
             backgroundColor: bgc,
             fontFamily: 'sans-serif',
-            maxNumOfLetters: 5,
+            maxNumOfLetters: 2,
             rounded: true,
             textColor: fgc
         },

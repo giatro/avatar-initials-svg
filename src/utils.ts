@@ -1,3 +1,5 @@
+import { colors } from "./colors";
+
 export function getInitials(text, maxNumOfLetters) {
     let replace = '$1';
     switch (maxNumOfLetters) {
@@ -19,3 +21,7 @@ export function getContrastYIQ(hexcolor){
     var yiq = ((r*299)+(g*587)+(b*114))/1000;
     return (yiq >= 128) ? '#000000' : '#FFFFFF';
 }
+
+export const getColorByName = (s: string) => colors[c(s) % colors.length];
+
+const c = (s:string): number => Array.from(s).reduce((sum: number, c:string) => sum + c.charCodeAt(0), 0);

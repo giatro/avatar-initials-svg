@@ -12,18 +12,19 @@
 <body>
     <script type="module">
         import { generateAvatarSvgUrl } from '/dist/avatar-initials-svg.modern.js';
-        for(let i = 0; i < 100; i++) {
+        const names = ['Elvis', 'Buddy Holly', 'Jackie Wilson', 'Jerry Lee Lewis'];
+        names.forEach(function (name) {
             const img = document.createElement('img');
             img.style.width = '50px';
-            img.src = generateAvatarSvgUrl('Elvis Aaron Presley', {
+            img.src = generateAvatarSvgUrl(name, {
                 // backgroundColor: '#666666',
                 // textColor: '#EEEEEE',
                 // fontFamily: 'sans-serif',
-                maxNumOfLetters: Math.floor(Math.random() * 3) + 1,
+                maxNumOfLetters: 3, // Math.floor(Math.random() * 3) + 1,
                 rounded: Math.floor(Math.random() * 2)
             });
             document.body.appendChild(img);
-        }
+        });
     </script>
 </body>
 </html>
