@@ -1,6 +1,6 @@
 {
   "name": "avatar-initials-svg",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Generate text based avatar url in SVG format (based on https://github.com/utkarshdubey/silhouette)",
   "module": "dist/avatar-initials-svg.modern.js",
   "main": "dist/avatar-initials-svg.umd.js",

@@ -8,7 +8,7 @@ export function getInitials(text, maxNumOfLetters) {
             replace = '$1$4';
             break;
     }
-    return text.split(" ").map((n)=>n[0]).join('').replace(/(\w)(\w)?(\w)*(\w)$/, replace) || '';
+    return (text.split(" ").map((n)=>n[0]).join('').replace(/(\w)(\w)?(\w)*(\w)$/, replace) || '').toUpperCase();
 }
 
 export function getContrastYIQ(hexcolor){
