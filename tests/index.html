@@ -12,19 +12,33 @@
 <body>
     <script type="module">
         import { generateAvatarSvgUrl } from '/dist/avatar-initials-svg.modern.js';
-        const names = ['Elvis', 'Buddy Holly', 'Jackie Wilson', 'Jerry Lee Lewis'];
-        names.forEach(function (name) {
+        function makeName(length) {
+            let result = ['','','',];
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            result = result.map(() => {
+                var s = '';
+                for ( var i = 0; i < 10; i++ ) {
+                    s += characters.charAt(Math.floor(Math.random() * 52));
+                }
+                return s;
+            })
+            return result.join(' ');
+        }
+
+        for(let i = 0; i < 500; i++) {
+            const name = makeName();
             const img = document.createElement('img');
             img.style.width = '50px';
+            img.title = name;
             img.src = generateAvatarSvgUrl(name, {
                 // backgroundColor: '#666666',
                 // textColor: '#EEEEEE',
                 // fontFamily: 'sans-serif',
-                maxNumOfLetters: 3, // Math.floor(Math.random() * 3) + 1,
-                rounded: Math.floor(Math.random() * 2)
+                maxNumOfLetters: 1 + (Math.random() * 3 >>> 0),
+                rounded: Math.random() * 2 >>> 0
             });
             document.body.appendChild(img);
-        });
+        }
     </script>
 </body>
 </html>

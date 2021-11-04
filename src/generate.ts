@@ -11,8 +11,8 @@ export interface IOptions {
 }
 
 export function generateAvatarSvgUrl(text: string, ops?: IOptions) {
-    const bgc = ops.backgroundColor || getColorByName(text);
-    const fgc = ops.textColor || getContrastYIQ(bgc);
+    const bgc = (ops && ops.backgroundColor) || getColorByName(text);
+    const fgc = (ops && ops.textColor) || getContrastYIQ(bgc);
     const options = {
         ...{
             backgroundColor: bgc,
