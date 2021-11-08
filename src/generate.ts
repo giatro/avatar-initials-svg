@@ -27,7 +27,7 @@ export function generateAvatarSvgUrl(text: string, ops?: IOptions) {
     // SVG Code
     const svgC = `<circle cx="500" cy="500" r="500" fill="${options.backgroundColor}" />`;
     const svgS = `<path fill="${options.backgroundColor}" d="M0 0h1000v1000H0z"/>`;
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">${options.rounded ? svgC : svgS}<text x="50%" y="50%" alignment-baseline="central" text-anchor="middle" letter-spacing="${ initials.length > 2 ? '-25' : 0 }" font-size="${ initials.length > 2 ? 400 : 500 }" fill="${options.textColor}" font-family="${options.fontFamily}">${initials}</text></svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">${options.rounded ? svgC : svgS}<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" letter-spacing="${ initials.length > 2 ? '-25' : 0 }" font-size="${ initials.length > 2 ? 400 : 500 }" fill="${options.textColor}" font-family="${options.fontFamily}">${initials}</text></svg>`;
 
     return "data:image/svg+xml," + encodeURIComponent(svg);
 }
